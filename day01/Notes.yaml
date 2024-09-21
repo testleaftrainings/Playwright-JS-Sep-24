@@ -1,0 +1,55 @@
+JavaScript - Web Language
+
+Chrome - V8
+Firefox - SpiderMonkey
+Edge - Chakra (older version) / V8 (new versions)
+
+ECMA - European Computer Manufacturers Association
+ES6 - 2015 
+JS - use to client side & server side applications (Node.js)
+
+browsers - inbuilt JS engine
+other than browsers - need an runtime environment - node.js
+
+JS - asynchronous programming language
+event driven architecture
+
+asynchronous
+non blocking IO operations
+
+JS - interpreted language
+JIT - Just in time compiler
+hot code (frequently used codes by your application) - machine code 
+new code - interpreted
+
+Data Types 
+1. Primitive datatype
+    - basic data type 
+    - immutable 
+    i. number 
+    var id = 44;
+    var formattedID = id.toString().padStart(3, '0');
+    log(formattedId) //044
+    ii. string 
+    iii. boolean
+    iv. undefined
+    v. null
+
+    vi. symbol
+    let symbol1 = Symbol('id')
+    let symbol2 = Symbol('id')
+    symbol1 === symbol2 //false
+    vii. BigInt 
+2. Non-primitive datatype
+Objects, Arrays, Functions, Map
+
+Variable Declaration
+1. var (older versions)
+    - Reassignment
+    - Scoping
+    - Hoisting
+2. let
+3. const
+
+const profileName;
+
