@@ -1,0 +1,207 @@
+Best practices for variable naming conventions
+1. meaningful names
+2. a to z, A to Z, 0 to 9, _ (underscore)
+firstname
+emailId - camelCase
+class - PlaywrightWrapper
+Don't start with numbers or underscore
+
+Hoisting - moving the variable declarations to the top
+Hoisting occurs in var, let and const
+The difference is in their behaviour 
+
+Function - 
+
+initializeApp();
+
+function initializeApp() {
+  setupEventListeners();
+  loadInitialData();
+}
+
+function setupEventListeners() {
+    //Detailed implementation
+}
+
+function loadInitialData(){
+
+}
+
+//After Hoisting
+
+function initializeApp() {
+  setupEventListeners();
+  loadInitialData();
+}
+
+function setupEventListeners() {
+    //Detailed implementation
+}
+
+function loadInitialData(){
+
+}
+
+Function - reusability of the code
+
+Types of functions
+1. Function Declaration
+2. Function Expression
+3. Arrow Function
+4. Asynchrous Function
+
+IIFE (Immediately Invoked Function Expression)
+Higher order function (Callbacks)
+
+1. Function Declaration
+function functionName(parameters) {
+    //function body
+}
+
+function userCredentials(username){
+  return `Hi ${username}`
+}
+
+//Call the function
+console.log(userCredentials(Shanmuga Kesavan))
+
+2. Function Expression
+
+const variableAssignment = function (parameters) {
+    //Function body
+}
+
+let user = function (name) {
+  console.log(`Hi ${name}`);
+}
+
+user('Chithambara Thanu');
+
+3. Arrow Function
+concise way to write function using =>
+
+const functionName = (parameters) => {
+  //Function body
+}
+
+const name = () => { 
+'Hello Angel';
+}
+console.log(name());
+
+test('title', async () => {
+
+})
+
+Asynchronous Function
+async function functionName(parameters){
+  //Function body
+}
+
+async function launchBrowser() {
+  const browser = await chromium.launch({timeout: 10000});
+  const context = await browser.newContext();
+}
+
+launchBrowser()
+
+Callback Function
+A function that is passed as an argument to another function and is executed after
+some operation has been completed.
+
+Function Hoisting
+1. Function Declaration
+    - completely hoisted including the function body
+    - you can call the function before it is declared in the code
+
+  console.log(userCredentials());
+  function userCredentials() {
+    return `Hi, Karthik`
+  }
+
+  2. Function Expression / Arrow Function
+      - only the variable declarations are hoisted, but the assignment (the actual
+      function) is not hoisted
+      - you cannot tell the func before it is assigned
+
+Operators
+1. Arithmetic Operators
+    Addition - '+'
+    Subtraction - '-'
+    Multiplication - '*'
+    Division - '/'
+    const a = 10;
+    const b = 5;
+    const res = a/b = 2 (quotient)
+    Modulus - '%'
+    cont rem = a%b = 0 (remainder)
+
+2. Assignment Operators
+    = , +=
+    x = 10
+    x+=5 //x = x + 5
+    log(x)
+3. Comparison Operators
+    boolean value - true/false
+    ==, !=, >=, <=, >, <
+    === Strict equality
+    == Non strict equality
+4. Logical Operators
+logical AND - &&, logical OR
+logical OR - ||
+true || true = true
+true || false = true
+false || true = true
+false || false = false
+
+Logical NOT 
+!1 = 0
+!0 = 1
+
+Conditional Statements
+- perform actions based on the conditions
+1. if
+2. if else
+3.if else if
+
+if(condition) {
+    //Code block
+}
+
+if(condition is true) {
+    //Code block
+} else {
+    //Code block - if the condition is false
+}
+
+if else if
+- multiple conditions to check
+Number = -87
+Number > 0 - positive
+Number < 0 - negative
+NUmber = 0 - neutral 
+
+if(condtion) {
+  //Code is executed if the first condition is true
+} else if (condition) {
+  //Code is executed if the second condition is true
+} else {
+  //Code is executed only if both condition 1 and condition 2 are false
+}
+
+
+switch case
+evaluating a single expression against multiple possible values
+
+switch(expression) {
+    case x:
+    //Code block
+    break;
+    case y:
+    //Code block
+    break;
+    
+    default:
+    //Code block
+}
+  
