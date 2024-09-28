@@ -1,0 +1,71 @@
+Looping statements
+    used to execute a block of code repeatedly, until the condition is failed
+  
+for loop
+  for(initialization; condition; increment) {
+      //Code block is executed if the condition is true
+  }
+
+while loop
+  used to execute the block as long as the specified condition is true
+    - checks the condition first,
+        only if the condition is true, while block is executed
+        if the condition is false, it never execute the while block
+    - initialization is done separately
+
+while(condition) {
+    //Code to be executed
+}
+
+let isValid = false;
+while(!isValid) {
+  let userInput = prompt("Enter a number greater than 10:");
+  if(userInput > 10) {
+        isValid = true;
+    }
+}
+
+do while
+    execute the code at least one time
+    After dong the task at least one time, it will check the condition
+
+do {
+    //Code block
+  } while(condition)
+
+Pagination
+while (next button is enabled) {
+    Collect the data
+}
+
+do {
+    Collect the data
+} while (next button is enabled)
+
+slice() - Takes a start index and an optional end index
+          supports  negative indices
+          can use negative index to count from the end of the string
+
+substring() - Takes a start index and an optional end index
+              does not support negative indices
+              Treats the negative indices as 0
+              swapping can be done (start index > end index)
+
+1. Create a function
+2. Use the split method to retrieve the characters
+3. Use an accumulator (any variable) and initialize it with an empty string
+4. Declare a for loop
+5. Get the characters and store it inside the accumulator
+6. Return the value
+7. Call the function and print the characters
+Input: Testleaf
+Output: faeltesT
+
+Introduction to Playwright
+Web automation tools
+Selenium
+WebDriver IO
+Puppeteer
+Cypress
+
+Websockets - full duplex communication
