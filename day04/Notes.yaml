@@ -1,0 +1,25 @@
+Introduction to Playwright
+
+CDP - Chrome DevTools Protocols
+
+Key/Core Components of Playwright
+1. Browser instance - copy of the browser (browser)
+2. Browser Context - an isolated environment within the browser instance
+                   - akin to incognito session
+                   - operate independently with its own cookies, local storage, and cache
+                   - making it possible to run tests in parallel without any shared state
+3. Page - an individual tab or a window within the browser context
+        - helps to interact with the web elements
+
+Single browser instance --> multiple browser contexts
+      Single browser contexts --> multiple pages
+
+To create a Playwright test file - use the extension - filename.spec.ts
+To run the test file - npx playwright test filename.spec.ts
+To open the html report - npx playwright show-report
+
+Default mode - headless
+Three levels of configurations
+  1. CLI - highest priority
+  2. Test level configuration - higher than the config.ts file
+  3. playwright.config.ts (default configurations) - least priority
