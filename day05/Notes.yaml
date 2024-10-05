@@ -1,0 +1,130 @@
+Playwright Locators
+
+DOM - Document Object Model
+    node - text/image/buttons
+
+Basics of HTML
+  Tags - instructions-enclosed within the angle brackets <html>, <head>, <p>
+  <html>
+    <head>
+      <title>Online Shopping website </title>
+    </head>
+    <body>
+      <div>
+        <input>
+        </input>
+        <button>
+        </button>
+      </div>
+    </body>
+    </html>
+
+  Attributes - <input class="input r4 wide mb16 mt8 username" type="email" value="" name="username" id="username" aria-describedby="error" style="display: block;">
+
+  Locators
+  1. CSS Locators
+  2. XPath
+  3. Playwright inbuilt locators
+
+Playwright in-built locators
+1. getByRole() - to locate a web element by its role (button, link, checkbox, alert)
+    await page.getByRole('link', {name: 'Show'}).click();
+2. getByText() - to locate a web element by text content
+    await page.getByText("Username").fill("ranjini.r@testleaf.com")
+    <div class=" ">LogIn</div>
+3. getByLabel() - to locate a web element by the label's text
+    <label for="username">Username</label>
+    await page.getByLabel("Username").fill("");
+4. getByPlaceholder() - to locate an input by its placeholder value
+5. getByAltText() - to locate a web element by its text alternative
+6. getByTitle() - to locate a web element by its title attribute
+    <span title = "SignIn">
+    page.title() - to get the title of the page
+7. getByTestId() - to locate a web elemnt based on its data-testid attribute
+
+CSS Locators
+1. Type Selector 
+tagname - <span>
+page.locator("button").click();
+2. Id - #idvalue
+<input class="inputLogin" type="text" id="username" name="USERNAME" size="50">
+page.locator("#username")
+3. Class - .class
+<input class="inputLogin" type="text" size="50">
+page.locator(".inputLogin")
+4. Attribute selector - [attributeName = 'attrValue']
+<input type="text" name="USERNAME" size="50">
+page.locator("[name='USERNAME']")
+<div class="nav-logo-link nav-progressive-attribute" aria-label="Amazon.in">
+    </div>
+page.locator("[aria-label='Amazon.in']")
+<input type="text"  size="50">
+page.locator("[type='text']");
+
+Substring
+Starts with attribute selector
+Select an element with an attribute that starts with a specific value
+tagname[atrribute^='value']
+<div class="inventory_list">
+<div class="inventory_item">
+<div class="inventory_item_img">
+<div class="inventory_item_desc">
+div[class^='inventory']
+
+Ends with attribute selector
+Select an element with an attribute that ends with a specific value
+tagname[attribute$='value']
+<button class="btn_primary btn_inventory">ADD TO CART</button>
+<button class="btn_secondary btn_inventory">ADD TO CART</button>
+page.locator("button[class$='btn_inventory']")
+
+Contains attribute selector
+Select an element with an attribute containing a secific substring
+tagname[attribute*='value']
+button[class*='btn']
+
+5. Descendant Combinator
+ancestor descendant
+form input
+div input
+
+6. Child combinator
+parent>child
+p>input
+div>h2
+
+7.Adjacent sibling combinator
+element+adjacent
+
+8. General sibling combinator
+element~sibling
+
+XPath
+1. Absolute XPath - traverse from the root node
+/html/head/body/div[2]/span/
+2. Relative XPath - current node
+page.locator("//input[@id='username']")
+
+
+const username = page.locator("#username");
+await username.fill('demosalesmanager');
+
+
+
+
+username.innerText()
+
+By default - timeout - 30s (including action timeout)
+global timeout - pipeline
+
+timeout                           action timeout
+overall test execution            click, fill, innerText
+
+
+timeout: 60000
+actionTimeout: 40000
+ 
+ 58th s 
+ username.fill
+
+
