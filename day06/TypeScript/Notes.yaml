@@ -1,0 +1,39 @@
+Introduction to TypeScript
+developed by Microsoft
+TS - statically typed
+     superset of JavaScript - any valid JS code is also a valid TS code
+
+1. Type safety 
+2. Improved code readability
+3. OOPs principles - interfaces, classes, inheritance
+
+file extension - .ts
+Compiler - tsc
+.ts - tsc - .js
+
+Global installation
+npm install -g typescript
+
+Local installation
+npm install --save-dev typescript
+npm install typescript
+
+Initialize the config file
+tsc --init
+
+Command to run a TS file
+tsc filename.ts
+node filename.js
+
+npm install -g ts-node
+ts-node filename.ts
+
+const browser:Browser = await chromium.launch();
+const context:BrowserContext = 
+const page:Page = 
+const title:string = await page.title();
+
+
+Tuple - fixed length of the array
+let tuple:[string, number] 
+let user:[string, boolean] = ["Testleaf", true]

@@ -1,0 +1,59 @@
+ Nested callbacks - callback hell
+
+ placeOrder(function(order) {
+    prepareTable(function(table) {
+      callFamily(function (family) {
+        serveFood(function (served){
+          console.log("Food is served!")
+        })
+      })
+    }
+
+  placeOrder()
+    .then(order => prepareTable ())
+    .then(table => callFamily())
+
+
+    .catch(error => log)
+
+3 states of Promise
+    1. Pending
+    2. Fulfilled (Resolved)
+    3. Rejected (Failed)
+
+Phases
+Promise creation - placing the order
+Promise resolved - the food arrives successfully
+Promise rejected - the order fails 
+
+Handling the promises
+1. Then
+2. Catch 
+
+.then(onFulfillment, onRejected)
+.then(null, errorMessage)
+
+.catch(onRejected)
+
+Arrays
+store multiple values in a single variable
+
+let arr = [element1, element2, ...]
+
+1. Array literal 
+let arr = ['ele1', 'ele2'];
+2. Array Constructor
+let arr = new Array('ele1','ele2')
+ 
+JS - heterogeneous
+
+arr1 = 
+arr2 = 
+1. Declare an empty array [result] let result = []
+2. Loop through the first array [use forEach]
+arr1.forEach(element => {
+})
+3. Check if the value is present in the second array and not already in the result array
+    if (arr2.includes(element) && !result.includes(element)) {
+        result.push(element)
+      }
