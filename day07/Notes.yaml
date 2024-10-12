@@ -1,0 +1,8 @@
+Dropdown
+<select>
+    <option value=" ">visible text</option>
+
+selectOptions() 
+1. Index
+2. Option value (value)
+3. Label

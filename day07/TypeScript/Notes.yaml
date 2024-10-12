@@ -1,0 +1,15 @@
+Union type - allows a variable or a parameter to have one of the several possible types
+
+type stringOrNumber = string|number
+
+Intersection type - allows a variable or parameter to have all several types combined
+type string&number = string&number
+
+
+const loginPageSelectors = {
+  usernameInput: '#username',
+  passwordInput: '#password',
+  loginButton: '#loginButton'
+};
+
+await page.locator(selectors.usernameInput)
