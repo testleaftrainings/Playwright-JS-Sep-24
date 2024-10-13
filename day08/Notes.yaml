@@ -1,0 +1,82 @@
+Playwright Assertions
+  1. Generic assertions - asserting the values in the tests
+  expected = 2
+  received = 1
+  toBe, toEqual, toBeGreaterThan, toContain, toContainEqual
+  2. Locator assertions - asserting the locators
+  toBeVisible, toBeEnabled, toHaveAttribute
+  3. Page assertions
+  title, url
+  4. Snapshot assertions
+  5. API Reference assertions
+
+Default timeout for the assertion is 5s
+
+ 1. Auto-retry assertion
+  Polling - 5s
+  0.5 s
+  0.5 s
+ 2. Non-retry assertion - which do not have the auto retrying mechanism 
+  static text verifications
+
+1. Hard Assertion - if the assertion is failed, the test execution is stopped immediately - failure report
+Launching the url
+Enter the username
+Enter the password
+Verification Check - assertion is failed
+Click Login button
+2. Soft Assertion - if the assertion is failed, it will not stop the test execution, the test will continue.
+Failure report - after the entire test run is complete
+Launching the url
+Enter the username
+Enter the password
+Verification Check - assertion is failed
+Click Login button
+
+Negating matchers
+expect(title).not.toBe("Amazon")
+await expect(page.locator("#submit")).not.toBeVisible();
+
+Auto Waiting
+Actionability Checks
+1. Visiblity
+2. Stability
+3. Receive events
+4. Enabled
+5. Editable
+
+Dialog
+1. Alerts are from the application(javascript)
+2. You cannot inspect the alert
+
+Types of Alerts
+1. Modal dialog - cannot be inspected
+    - Simple Alert
+        a message + Ok button
+    - Confirm Alert
+        a message + Ok/Cancel
+        accept the alert or dismiss the alert
+    - Prompt Alert
+        a message + Prompt text box + Ok/Cancel
+        enter the input and accept the alert
+        dismiss the alert
+    - BeforeUnload Alert
+        a message + Leave/Stay
+        accept the alert/dismiss the alert
+2. Non-modal dialog
+Sweet Alert - can be inspected
+
+Methods:
+1. accept("Testleaf") - to accept the alert
+2. dismiss() - to cancel the alert
+3. message() - returns the message displayed
+4. type() - returns the type of the alert
+    if(dialog.type()==='confirm') {
+        dialog.accept();
+    } else 
+      dialog.dismiss();
+5. defaultValue() - returns the default value of the prompt dialog
+
+Playwright auto dismiss the alerts in the page
+
+
