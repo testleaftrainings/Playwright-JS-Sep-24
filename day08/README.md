@@ -86,7 +86,7 @@ Here are examples demonstrating how auto-waiting works in Playwright:
 
 #### Clicking an Element
 
-javascript
+```javascript
 import { test, expect } from '@playwright/test';
 
 test('auto-waiting example for click', async ({ page }) => {
@@ -98,11 +98,11 @@ test('auto-waiting example for click', async ({ page }) => {
   // Playwright waits for the new URL to load
   await expect(page).toHaveURL('http://leaftaps.com/opentaps/control/main');
 });
-
+```
 
 #### Typing into an Input Field
 
-javascript
+```javascript
 import { test, expect } from '@playwright/test';
 
 test('auto-waiting example for typing', async ({ page }) => {
@@ -118,7 +118,7 @@ test('auto-waiting example for typing', async ({ page }) => {
   // Playwright waits for the navigation to complete
   await expect(page).toHaveURL('https://amazon.in/dashboard');
 });
-
+```
 
 ### Configuring Timeouts
 
@@ -126,16 +126,16 @@ You can configure timeouts for actions and assertions to customize the auto-wait
 
 #### Per Action Timeout
 
-javascript
+```javascript
 await page.click('text=More information...', { timeout: 10000 }); // 10 seconds timeout
-
+```
 
 #### Global Timeout Configuration
 
 You can set a global timeout in the Playwright configuration file (playwright.config.ts or 
 playwright.config.js).
 
-javascript
+```javascript
 // playwright.config.ts
 import { defineConfig } from '@playwright/test';
 
@@ -145,6 +145,7 @@ export default defineConfig({
     timeout: 10000, // 10 seconds for each assertion
   },
 });
+```
 
 ## Modal Dialogs
 
