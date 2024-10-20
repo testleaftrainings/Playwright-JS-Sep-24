@@ -1,0 +1,59 @@
+Frames
+Windows
+File Upload & Download
+
+Interacting with frames
+
+<frameset>
+  <frame>
+  <p>
+  <img>
+  </p>
+  </img>
+<frameset>
+
+<iframe> - Inline frame
+modern web applications
+One HTML doc embedded into another HTML doc
+supports multimedia contents - videos, ad, weather
+<html>
+  <head>
+    <body>
+      <iframe>
+        <html>
+          <head>
+            <body>
+                <iframe>
+                    <html>
+                       <head>
+                         <body>
+                </iframe>
+
+                </iframe>
+
+    </body>
+    </head>
+    </html>
+  
+Methods to interact with the frames
+1. page.frame - simple and straightforward
+  - By id
+  - By url
+  - By index
+2. page.frameLocator - efficient, complex scenarios / nested iframes
+
+Interacting with Multiple windows / tabs / popup
+1. Sequential approach
+2. Concurrent approach
+
+
+const [newWindow1, newWindow2, newWindow3] = await Promise.all([
+    Waiting for page1
+    click the button
+    Waiting for page2
+    Click the button
+    Waiting for page3
+    Click the button
+])
+
+result Promise[2] = [Promise1, Promise2, Promise3]
