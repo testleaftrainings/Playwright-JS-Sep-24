@@ -1,0 +1,222 @@
+{
+	"info": {
+		"_postman_id": "7dd165e5-5ea9-459a-9d34-0c2df7b57e21",
+		"name": "PW-JS-Sep-ServiceNow",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28988315",
+		"_collection_link": "https://solar-space-220954.postman.co/workspace/PW_API~2c83a84c-94f6-466c-996d-ae99b6626e8d/collection/28988315-7dd165e5-5ea9-459a-9d34-0c2df7b57e21?action=share&source=collection_link&creator=28988315"
+	},
+	"item": [
+		{
+			"name": "Create a new incident in the Servicenow app",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "2AqjN!lC2!Vy",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"short_description\": \"Created via Postman\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dev186929.service-now.com/api/now/table/incident",
+					"protocol": "https",
+					"host": [
+						"dev186929",
+						"service-now",
+						"com"
+					],
+					"path": [
+						"api",
+						"now",
+						"table",
+						"incident"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve a specific incident",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "2AqjN!lC2!Vy",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://dev186929.service-now.com/api/now/table/incident/0c967decc36992105119bd33e401315c",
+					"protocol": "https",
+					"host": [
+						"dev186929",
+						"service-now",
+						"com"
+					],
+					"path": [
+						"api",
+						"now",
+						"table",
+						"incident",
+						"0c967decc36992105119bd33e401315c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update the short description",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "2AqjN!lC2!Vy",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"short_description\": \" Created by Ajay via Postman\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dev186929.service-now.com/api/now/table/incident/0c967decc36992105119bd33e401315c",
+					"protocol": "https",
+					"host": [
+						"dev186929",
+						"service-now",
+						"com"
+					],
+					"path": [
+						"api",
+						"now",
+						"table",
+						"incident",
+						"0c967decc36992105119bd33e401315c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve all incidents",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "2AqjN!lC2!Vy",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://dev186929.service-now.com/api/now/table/incident",
+					"protocol": "https",
+					"host": [
+						"dev186929",
+						"service-now",
+						"com"
+					],
+					"path": [
+						"api",
+						"now",
+						"table",
+						"incident"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete the incident",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "2AqjN!lC2!Vy",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://dev186929.service-now.com/api/now/table/incident/0c967decc36992105119bd33e401315c",
+					"protocol": "https",
+					"host": [
+						"dev186929",
+						"service-now",
+						"com"
+					],
+					"path": [
+						"api",
+						"now",
+						"table",
+						"incident",
+						"0c967decc36992105119bd33e401315c"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
