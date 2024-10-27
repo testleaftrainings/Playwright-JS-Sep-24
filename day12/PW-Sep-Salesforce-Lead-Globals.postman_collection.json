@@ -1,0 +1,245 @@
+{
+	"info": {
+		"_postman_id": "ea352c92-5ef8-444d-b406-9017af4899cc",
+		"name": "PW-Sep-Salesforce-Lead-Globals",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28988315",
+		"_collection_link": "https://solar-space-220954.postman.co/workspace/PW_API~2c83a84c-94f6-466c-996d-ae99b6626e8d/collection/28988315-ea352c92-5ef8-444d-b406-9017af4899cc?action=share&source=collection_link&creator=28988315"
+	},
+	"item": [
+		{
+			"name": "Generate the access token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Save the API response in a variable\r",
+							"var resp = pm.response.json();\r",
+							"//Extract the access token\r",
+							"var accesstoken = resp.access_token;\r",
+							"//Save the access token globally\r",
+							"pm.globals.set(\"Access_Token\", accesstoken);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "3MVG9fe4g9fhX0E5hbGhek7Fp9ijXU30Q2eWnfUpEFvJ1mkEJCNcHmE01luXmSbgA73HgGRy5Ouj3c1IE2SLZ",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "0184AC8597512459A6BF96E1F46CB699EAEA1CEC34212BDDF383F28F99CCB376",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "majay3574@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Ajaymichael@123",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://login.salesforce.com/services/oauth2/token",
+					"protocol": "https",
+					"host": [
+						"login",
+						"salesforce",
+						"com"
+					],
+					"path": [
+						"services",
+						"oauth2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a new  lead",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Save the response in a variable\r",
+							"var resp = pm.response.json();\r",
+							"//From the response variable extract the id\r",
+							"var id = resp.id;\r",
+							"//Save id in a global variable\r",
+							"pm.globals.set(\"ID\", id);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{Access_Token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"FirstName\": \"Mohammed\",\r\n    \"LastName\": \"Arief\",\r\n    \"Company\": \"Testleaf\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://qeagle8-dev-ed.develop.my.salesforce.com/services/data/v58.0/sobjects/Lead",
+					"protocol": "https",
+					"host": [
+						"qeagle8-dev-ed",
+						"develop",
+						"my",
+						"salesforce",
+						"com"
+					],
+					"path": [
+						"services",
+						"data",
+						"v58.0",
+						"sobjects",
+						"Lead"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a specific lead",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{Access_Token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://qeagle8-dev-ed.develop.my.salesforce.com/services/data/v58.0/sobjects/Lead/{{ID}}",
+					"protocol": "https",
+					"host": [
+						"qeagle8-dev-ed",
+						"develop",
+						"my",
+						"salesforce",
+						"com"
+					],
+					"path": [
+						"services",
+						"data",
+						"v58.0",
+						"sobjects",
+						"Lead",
+						"{{ID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update a specific field",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{Access_Token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Salutation\": \"Mr.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://qeagle8-dev-ed.develop.my.salesforce.com/services/data/v58.0/sobjects/Lead/{{ID}}",
+					"protocol": "https",
+					"host": [
+						"qeagle8-dev-ed",
+						"develop",
+						"my",
+						"salesforce",
+						"com"
+					],
+					"path": [
+						"services",
+						"data",
+						"v58.0",
+						"sobjects",
+						"Lead",
+						"{{ID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all leads",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{Access_Token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://qeagle8-dev-ed.develop.my.salesforce.com/services/data/v58.0/sobjects/Lead",
+					"protocol": "https",
+					"host": [
+						"qeagle8-dev-ed",
+						"develop",
+						"my",
+						"salesforce",
+						"com"
+					],
+					"path": [
+						"services",
+						"data",
+						"v58.0",
+						"sobjects",
+						"Lead"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
