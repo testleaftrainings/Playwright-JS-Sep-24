@@ -1,0 +1,59 @@
+Class - blueprint or a template
+
+Classroom
+{
+  Desks
+  Tables
+  Chairs
+  Blackboard 
+  Chalkpiece
+
+  conductLecture()
+  writtingExams()
+
+}
+
+Object - an actual instance created from a class
+X A - object of classroom
+X B - object of classroom
+
+Constructor
+
+Classroom(numOfDesks, numOfChairs, hasBoard) {
+  Desks=numOfDesks
+  Chairs =numOfChairs
+  Board = hasBoard 
+}
+
+const xa = new Classroom(25,25,true)
+const xb = new Classroom(30,30,true)
+
+Access Modifiers
+
+1. public     - accessible from anywhere
+2. private    - accessible only within the same class
+3. protected  - accessible within the class and its subclasses
+
+Classroom {
+  public Desks
+  public Chairs
+  private key //only accessible by the class incharge
+
+  public conductLecture()
+  private writingExams()
+}
+
+OOPs 
+1. Inheritance
+      Single Inheritance - a class inherits from only one superclass
+      LoginPage extends BasePage
+      Hierarchial inheritance - multiple classes inherit from a single superclass
+      LoginPage and HomePage extends BasePage
+      Multiple inheritance  - a class inherits from more than one class
+      LoginPage extends BasePage
+      LoginPage extends Browser
+
+2. Polymorphism
+3. Abstraction
+4. Encapsulation
+
