@@ -1,0 +1,98 @@
+Explicit Waits
+
+1. waitForSelector() 
+await page.waitForSelector('button.submit', {state:'visible', timeout: 60000});
+
+2.waitForTimeout()
+await page.waitForTimeout(5000);
+
+3. waitForLoadState();
+  load, domcontentloaded, networkidle
+  await page.waitForLoadState('load');
+  await page.waitForLoadState('domcontentloaded');
+  await page.waitForLoadState('networkidle')
+
+4. waitForEvent()
+await page.waitForEvent('popup')
+
+5. waitForUrl()
+
+Test suite structure
+
+1. setup
+    test.beforeAll()
+    Database connection - run once before all the tests in a file
+    test.beforeAll(async () => {
+        //setup global resources like database connections, API mocking
+    })
+
+    test.beforeEach()
+    test.beforeAll() - 1
+    test.beforeEach(async ()=>
+      test.use()
+    ){
+    }
+    test1 - Creating a lead
+    test.beforeEach()
+    test2 - Editing the lead
+    test.beforeEach()
+    test3
+    test.beforeEach()
+    test4
+2. teardown
+test.afterAll() - executed once
+test.afterEach()
+
+beforeAll
+beforeEach
+Test1
+afterEach
+
+beforeEach
+Test2
+afterEach
+
+beforeEach
+Test3
+afterEach
+afterAll
+
+Focus a test - test.only
+Skip a test - test.skip - no impact on the suite
+test.fail() - counts as a pass if it doesn't fail
+test.fixme() - fails the test suite, indicating a change
+
+test(`Login Test', async () => {
+  test.skip(browserName === 'firefox')
+}
+)
+
+test.describe() - logically group tests
+
+test.describe(`Login functionality' () =>{
+  test.beforeAll() {
+  
+  }
+
+  test.beforeEach() {
+  
+  }
+  test(`Login test using valid credentials, async () =>{
+  
+  })
+
+  test(`Login test using invalid credentials`, async () => {
+  
+  })
+})
+
+npx playwright test --grep --%"@smoke^|@regression"
+npx playwright test --grep "(?=.*@login)(?=.*@addToCart)"
+
+--grep-invert "@login"
+
+test(`Test to login', {
+
+})
+
+Reporters
