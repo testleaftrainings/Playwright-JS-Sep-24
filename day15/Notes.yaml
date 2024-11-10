@@ -1,0 +1,56 @@
+Encapsulation 
+bundling of data and functions toagether into a single unit
+  - organize the code by grouping related functions and data
+  - protect the data so it's not changed by accident
+
+
+Design Patterns
+1. Page Object Model
+    - Organizing the code
+    - Improved readability
+    - Increased reusability
+    - Easy maintenance
+
+2. Factory Pattern 
+3. Singleton Pattern
+4. Data driven testing pattern (DDT)
+5. Decorator pattern
+6. Adapter Design Pattern
+
+Best Practices to design test automation framework
+
+1. Use Design Patterns
+2. Organize test code effectively
+3. Use a base configuration
+4. Implement robust logging and reprting
+5. Set up test data management
+6. Utilize Playwright-specific features
+7. Integrate Continuous Integration
+8. Use Playwright's hooks
+
+
+retries: process.env.CI ? 2 : 1,
+                          true : false
+
+                          if(process.env.CI) {
+                              retry = 2
+                          }
+                          else {
+                          
+                          }
+
+retries: 2
+Retry tests
+flaky tests
+
+1. Extend one of the methods (fill / click methods)
+      Click <<slowdown>> - best practice
+      Wrapper method -> Click after that wait for sometime (retry)
+
+2. Retry logic to be customized (custom functions)
+      - Check if the test is on retry
+      - Call the wrapper method
+
+3. Change the existing test to use the new method
+
+test.extend - extend or customize the behaviour of the base test object
