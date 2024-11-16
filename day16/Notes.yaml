@@ -1,0 +1,47 @@
+route.fulfill - mocking 
+
+route.fulfill({
+  status: 200   //Fake a successful login
+  body: 
+})
+
+page.route ("endpoint", async (route, request)=>{
+
+})
+route.continue
+route.abort()
+
+page.on('request', request=> console.log(request.method(), request.url()))
+page.on('response', response=> console.log(response.status(), response.url()))
+
+page.waitForResponse('**/')
+
+
+GitHub Actions
+
+Prerequisites
+1. You should have a github account
+2. You need to create a repo (public/private)
+3. You need to connect your VS code to that repo
+4. You need to configure the git yml
+5. You need to push the code to the github --> Github Actions running your code
+6. Download the result and audit!
+
+Usecase: Every time you push the code to the git repo --> PW code (specific tests that you configure)
+will run on the allocated machines (by github actions) and results will be availabe to view later
+
+
+Framework Structure
+beforeAll
+storageState
+smoke
+storageState
+regression
+storageState
+sanity
+
+globalSetup
+storageState
+smoke
+sanity
+regresstion
